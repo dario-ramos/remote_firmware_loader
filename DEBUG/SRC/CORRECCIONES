@@ -1,0 +1,23 @@
+ - Uso de char* en lugar de string : Reemplazado en todas partes.
+ - for(getline(streamEntrada, bufferOut); !streamEntrada.eof(); getline(streamEntrada, bufferOut)) en cliente.cpp
+    reemplazado por while equivalente.
+ - Verificación de que los sockets manden todo : Al enviar una línea del archivo de entrada desde el cliente, se
+    sigue enviando hasta que la cantidad de bytes enviados coincida con el tamaño original del mensaje.
+ - "Hardcodeos" : Creé una clase Constantes con todas las constantes del programa como variables estáticas públicas.
+ - Método de atención a clientes sincronizado totalmente : Lo hacía porque mantenía el archivo abierto todo el tiempo.
+   Si abro y cierro cada vez que escribo, como hago ahora, basta con sincronizar sólo allí.
+ - Mutex que no lockea : El constructor de Locking recibe el mutex m por referencia, llama a lock para él y guarda
+    un puntero al mismo. En el destructor de Locking, se llama a unlock usando ese puntero.
+ - Mutex global : Puse un Mutex como variable estática de la clase firmware. De esa manera, sólo se sincroniza el
+   código que escribe en el archivo, y el que lo borra. Si ocurriera que un thread cliente intentara borrar el 
+   archivo mientras otro lo escribe, el primero se quedará bloqueado hasta que el otro termine de escribir y libere
+   el mutex.
+ - El string que recibe procesarLinea no es const por si tengo que sacarle la marca de último registro.
+ - referenciasASocketsClientes : Mantengo referencias a los sockets clientes en el servidor porque las instancias de 
+   Socket resultado de los  accept son creadas en el heap por el servidor : entonces, es su responsabilidad liberar 
+   esa memoria y para eso almacena las referencias (para hacer los delete después).
+ - Llamada a pthread_cancel para cortar el accept : Llamo explícitamente al destructor de Socket para sockServ en
+   el stop del servidor.
+ - Usar iteradores en vez de unsigned int : OK, y usando typedefs.
+ 
+   

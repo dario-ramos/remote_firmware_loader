@@ -1,0 +1,11 @@
+bin_PROGRAMS = tp484885
+tp484885_SOURCES = tp484885.cpp socket.cpp mutex.cpp cliente.cpp 	servidor.cpp \
+				firmware.cpp clienthandler.cpp locking.cpp constantes.cpp
+
+# set the include path found by configure
+INCLUDES= $(all_includes)
+
+# the library search path.
+tp484885_LDFLAGS = $(all_libraries) 
+noinst_HEADERS = socket.h thread.h mutex.h cliente.h servidor.h firmware.h \
+			clienthandler.h locking.h constantes.h

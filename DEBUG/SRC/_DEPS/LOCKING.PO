@@ -1,0 +1,52 @@
+locking.o locking.o: /home/dario_phoenix/tp484885/src/locking.cpp \
+  /home/dario_phoenix/tp484885/src/locking.h \
+  /home/dario_phoenix/tp484885/src/mutex.h /usr/include/pthread.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/sched.h /usr/include/bits/types.h \
+  /usr/include/bits/wordsize.h \
+  /usr/lib/gcc-lib/i486-linux/3.3.5/include/stddef.h \
+  /usr/include/bits/typesizes.h /usr/include/time.h \
+  /usr/include/bits/sched.h /usr/include/bits/time.h \
+  /usr/include/xlocale.h /usr/include/signal.h /usr/include/bits/sigset.h \
+  /usr/include/bits/pthreadtypes.h /usr/include/bits/initspin.h \
+  /usr/include/bits/sigthread.h
+
+/home/dario_phoenix/tp484885/src/locking.h:
+
+/home/dario_phoenix/tp484885/src/mutex.h:
+
+/usr/include/pthread.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/lib/gcc-lib/i486-linux/3.3.5/include/stddef.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/bits/initspin.h:
+
+/usr/include/bits/sigthread.h:
